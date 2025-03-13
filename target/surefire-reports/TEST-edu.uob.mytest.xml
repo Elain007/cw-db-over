@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uob.mytest" time="0.457" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/test-classes:/Users/apple01/cw-db加测试版/cw-db-over/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter16278248503870322838.jar /Users/apple01/cw-db加测试版/cw-db-over/target/surefire 2025-03-13T23-40-35_155-jvmRun1 surefire89159652822121915tmp surefire_05873484714851745882tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="edu.uob.mytest"/>
+    <property name="surefire.test.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/test-classes:/Users/apple01/cw-db加测试版/cw-db-over/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/apple01"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/apple01/cw-db加测试版/cw-db-over"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter16278248503870322838.jar"/>
+    <property name="user.script" value="Hans"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23.0.1+11-39"/>
+    <property name="user.name" value="apple01"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.7.6"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/apple01/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/q_/s1v0jt9s13n2lpjnyyvqrv9c0000gn/T/"/>
+    <property name="java.version" value="23.0.1"/>
+    <property name="user.dir" value="/Users/apple01/cw-db加测试版/cw-db-over"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/apple01/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.1+11-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="testSelectConditions" classname="edu.uob.mytest" time="0.278">
+    <system-out><![CDATA[ksnxaseknw
+========================
+CREATE DATABASE ksnxaseknw;
+[OK] Switched to database: ksnxaseknw
+========================
+
+ksnxaseknw
+========================
+USE ksnxaseknw;
+[OK]
+========================
+
+/Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab123456
+========================
+CREATE TABLE person (name, age, city);
+[OK] Table created
+========================
+
+========================
+INSERT INTO person VALUES ('Alice', 30, 'NewYork');
+[OK] Insert successful
+========================
+
+========================
+INSERT INTO person VALUES ('Bob', 25, 'LosAngeles');
+[OK] Insert successful
+========================
+
+========================
+INSERT INTO person VALUES ('Charlie', 35, 'Chicago');
+[OK] Insert successful
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM person WHERE ((age > 26) OR (city == 'LosAngeles'));
+[DEBUG] Extracted table name: 'person'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab
+[DEBUG] Retrieved table header: id	name	age	city
+[DEBUG] Processed header columns: [id, name, age, city]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+[DEBUG] Parsed condition: 'age > 26'
+[DEBUG] Parsed condition: 'city == LosAngeles'
+[DEBUG] Row 1 condition (age > 26): '30'
+[DEBUG] Row 2 condition (age > 26): '25'
+[DEBUG] Row 2 condition (city == LosAngeles): 'LosAngeles'
+[DEBUG] Row 3 condition (age > 26): '35'
+========================
+SELECT * FROM person WHERE ((age > 26) OR (city == 'LosAngeles'));
+[OK]
+id	name	age	city
+1	Alice	30	NewYork
+2	Bob	25	LosAngeles
+3	Charlie	35	Chicago
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM person WHERE ((age > 26) AND (city == 'Chicago'));
+[DEBUG] Extracted table name: 'person'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab
+[DEBUG] Retrieved table header: id	name	age	city
+[DEBUG] Processed header columns: [id, name, age, city]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+[DEBUG] Parsed condition: 'age > 26'
+[DEBUG] Parsed condition: 'city == Chicago'
+[DEBUG] Row 1 condition (age > 26): '30'
+[DEBUG] Row 1 condition (city == Chicago): 'NewYork'
+[DEBUG] Row 2 condition (age > 26): '25'
+[DEBUG] Row 3 condition (age > 26): '35'
+[DEBUG] Row 3 condition (city == Chicago): 'Chicago'
+========================
+SELECT * FROM person WHERE ((age > 26) AND (city == 'Chicago'));
+[OK]
+id	name	age	city
+3	Charlie	35	Chicago
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM person WHERE (name LIKE 'Al');
+[DEBUG] Extracted table name: 'person'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab
+[DEBUG] Retrieved table header: id	name	age	city
+[DEBUG] Processed header columns: [id, name, age, city]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+[DEBUG] Parsed condition: 'name LIKE Al'
+[DEBUG] Row 1 condition (name LIKE Al): 'Alice'
+[DEBUG] Row 2 condition (name LIKE Al): 'Bob'
+[DEBUG] Row 3 condition (name LIKE Al): 'Charlie'
+========================
+SELECT * FROM person WHERE (name LIKE 'Al');
+[OK]
+id	name	age	city
+1	Alice	30	NewYork
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testQueryID" classname="edu.uob.mytest" time="0.02">
+    <system-out><![CDATA[asduvsrxsr
+========================
+CREATE DATABASE asduvsrxsr;
+[OK] Switched to database: asduvsrxsr
+========================
+
+asduvsrxsr
+========================
+USE asduvsrxsr;
+[OK]
+========================
+
+/Users/apple01/cw-db加测试版/cw-db-over/databases/asduvsrxsr/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Alice', 30, TRUE);
+[OK] Insert successful
+========================
+
+[DEBUG] Executing SELECT command: SELECT id FROM marks WHERE name == 'Alice';
+[DEBUG] Extracted table name: 'marks'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/asduvsrxsr/marks.tab
+[DEBUG] Retrieved table header: id	name	mark	pass
+[DEBUG] Processed header columns: [id, name, mark, pass]
+[DEBUG] Selected columns from query: [id]
+[DEBUG] Selected column indices: [0]
+[DEBUG] Parsed condition: 'name == Alice'
+[DEBUG] Row 1 condition (name == Alice): 'Alice'
+========================
+SELECT id FROM marks WHERE name == 'Alice';
+[OK]
+id
+1
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testBasicCreateAndQuery" classname="edu.uob.mytest" time="0.023">
+    <system-out><![CDATA[hxbkafsofl
+========================
+CREATE DATABASE hxbkafsofl;
+[OK] Switched to database: hxbkafsofl
+========================
+
+hxbkafsofl
+========================
+USE hxbkafsofl;
+[OK]
+========================
+
+/Users/apple01/cw-db加测试版/cw-db-over/databases/hxbkafsofl/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Alice', 30, TRUE);
+[OK] Insert successful
+========================
+
+========================
+INSERT INTO marks VALUES ('Bob', 25, FALSE);
+[OK] Insert successful
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM marks;
+[DEBUG] Extracted table name: 'marks'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/hxbkafsofl/marks.tab
+[DEBUG] Retrieved table header: id	name	mark	pass
+[DEBUG] Processed header columns: [id, name, mark, pass]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+========================
+SELECT * FROM marks;
+[OK]
+id	name	mark	pass
+1	Alice	30	TRUE
+2	Bob	25	FALSE
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testTablePersistsAfterRestart" classname="edu.uob.mytest" time="0.03">
+    <system-out><![CDATA[szliughzhd
+========================
+CREATE DATABASE szliughzhd;
+[OK] Switched to database: szliughzhd
+========================
+
+szliughzhd
+========================
+USE szliughzhd;
+[OK]
+========================
+
+/Users/apple01/cw-db加测试版/cw-db-over/databases/szliughzhd/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Alice', 30, TRUE);
+[OK] Insert successful
+========================
+
+szliughzhd
+========================
+USE szliughzhd;
+[OK]
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM marks;
+[DEBUG] Extracted table name: 'marks'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/szliughzhd/marks.tab
+[DEBUG] Retrieved table header: id	name	mark	pass
+[DEBUG] Processed header columns: [id, name, mark, pass]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+========================
+SELECT * FROM marks;
+[OK]
+id	name	mark	pass
+1	Alice	30	TRUE
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testForErrorTag" classname="edu.uob.mytest" time="0.017">
+    <system-out><![CDATA[taizmncuor
+========================
+CREATE DATABASE taizmncuor;
+[OK] Switched to database: taizmncuor
+========================
+
+taizmncuor
+========================
+USE taizmncuor;
+[OK]
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM nonexisttable;
+[DEBUG] Extracted table name: 'nonexisttable'
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/taizmncuor/nonexisttable.tab
+[DEBUG] Table file does not exist.
+========================
+SELECT * FROM nonexisttable;
+[ERROR] Table does not exist
+========================
+
+]]></system-out>
+  </testcase>
+</testsuite>
