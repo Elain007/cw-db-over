@@ -82,7 +82,7 @@ public class SelectCommand {
                 if (whereClause.endsWith(";")) {
                     whereClause = whereClause.substring(0, whereClause.length() - 1).trim();
                 }
-                // 判断条件中是否包含 AND 或 OR
+                // Determine whether the condition contains AND OR OR.
                 boolean containsAnd = whereClause.toUpperCase().contains("AND");
                 boolean containsOr = whereClause.toUpperCase().contains("OR");
                 if (containsAnd && containsOr) {
@@ -95,7 +95,7 @@ public class SelectCommand {
                 }
                 List<String> condStrings = new ArrayList<>();
                 if (logicOperator != null) {
-                    // 去除外层多余的括号
+                    // Remove the extra brackets on the outer layer
                     while (whereClause.startsWith("(") && whereClause.endsWith(")")) {
                         int count = 0;
                         boolean balanced = true;
@@ -142,7 +142,7 @@ public class SelectCommand {
                 } else {
                     condStrings.add(whereClause);
                 }
-                // 处理每个条件表达式
+                // Process each conditional expression
                 for (String condStr : condStrings) {
                     while (condStr.startsWith("(") && condStr.endsWith(")")) {
                         condStr = condStr.substring(1, condStr.length() - 1).trim();
@@ -155,7 +155,7 @@ public class SelectCommand {
                     String col = parts[0].trim();
                     String op = parts[1].trim();
                     String val = parts[2].trim();
-                    // 去除引号以及非字母数字字符（保持原有逻辑）
+                    // Remove quotation marks and non-alphanumeric characters
                     val = val.replaceAll("^[\"']|[\"']$", "");
                     val = val.replaceAll("[^a-zA-Z0-9]", "");
                     System.out.println("[DEBUG] Parsed condition: '" + col + " " + op + " " + val + "'");
@@ -180,14 +180,14 @@ public class SelectCommand {
             }
             resultRows.add(String.join("\t", returnHeader));
 
-            // 遍历数据行
+            // Traverse data rows
             for (int i = 1; i < lines.size(); i++) {
                 String rowLine = lines.get(i);
                 String[] rowValues = rowLine.split("\t");
                 boolean rowMatches = true;
                 if (hasWhereClause) {
                     if (logicOperator == null) {
-                        // 单个条件
+                        // Single condition
                         rowMatches = evaluateCondition(conditions.get(0), rowValues, headerList, i);
                     } else if (logicOperator.equals("AND")) {
                         rowMatches = true;
@@ -232,7 +232,7 @@ public class SelectCommand {
     }
 
     /**
-     * 根据单个条件判断当前行是否满足要求。
+     * Judging whether the current line meets the requirements according to a single condition.
      */
     private boolean evaluateCondition(String[] cond, String[] rowValues, List<String> headerList, int rowIndex) {
         String col = cond[0];
