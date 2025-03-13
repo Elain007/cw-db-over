@@ -13,26 +13,11 @@ public class QueryExecuter {
     private Database database;
 
     public QueryExecuter() {
-//        this.command = command.trim();
-//        if (command.isEmpty()) {
-//            throw IOException("command is empty.");
-//        }
         storageFolderPath = Paths.get("databases").toAbsolutePath().toString();
         database = new Database(storageFolderPath);
     }
 
-//    public void setDatabase(String databaseName) throws IOException {
-//        String lowercaseDbName = databaseName.trim().toLowerCase();
-//        if (lowercaseDbName.isEmpty()) {
-//            throw new IOException("[ERROR] empty database name.");
-//        }
-//        this.database = new Database(storageFolderPath);
-//        this.database.setCurrentDatabasePath(storageFolderPath + File.separator + databaseName);
-//    }
-
     public String execute(String command) throws IOException {
-//        String currentDatabasePath = storageFolderPath + File.separator + database;
-//        File currentDatabaseFolder = new File(currentDatabasePath);
         command = command.trim();
         if (command.isEmpty()) {
             return "[ERROR] command is empty.";
@@ -41,8 +26,6 @@ public class QueryExecuter {
         String commandType = commandTokens[0].toUpperCase();
         String result;
         switch (commandType) {
-            // <CommandType>     ::=  <Use> | <Create> | <Drop> | <Alter> | <Insert> | <Select> |
-            // <Update> | <Delete> | <Join>
             case "SELECT" -> result = executeSelectCommand(command);
             case "USE" -> result = executeUseCommand(command);
             case "CREATE" -> result = executeCreateCommand(commandTokens);

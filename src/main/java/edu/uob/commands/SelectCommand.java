@@ -72,18 +72,30 @@ public class SelectCommand {
             }
             System.out.println("[DEBUG] Selected column indices: " + selectedIndices);
 
-            // Parse the WHERE clause 
+            // Parse the WHERE clause
             int wherePos = command.toUpperCase().indexOf("WHERE");
             boolean hasWhereClause = wherePos != -1;
             List<String[]> conditions = new ArrayList<>();
+            String logicOperator = null; // "AND" 或 "OR"；单个条件时为 null
             if (hasWhereClause) {
                 String whereClause = command.substring(wherePos + 5).trim();
                 if (whereClause.endsWith(";")) {
                     whereClause = whereClause.substring(0, whereClause.length() - 1).trim();
                 }
-                boolean isComposite = whereClause.toUpperCase().contains("AND");
+                // 判断条件中是否包含 AND 或 OR
+                boolean containsAnd = whereClause.toUpperCase().contains("AND");
+                boolean containsOr = whereClause.toUpperCase().contains("OR");
+                if (containsAnd && containsOr) {
+                    System.out.println("[DEBUG] Mixed AND/OR conditions are not supported.");
+                    return "[ERROR] Mixed AND/OR conditions are not supported";
+                } else if (containsAnd) {
+                    logicOperator = "AND";
+                } else if (containsOr) {
+                    logicOperator = "OR";
+                }
                 List<String> condStrings = new ArrayList<>();
-                if (isComposite) {
+                if (logicOperator != null) {
+                    // 去除外层多余的括号
                     while (whereClause.startsWith("(") && whereClause.endsWith(")")) {
                         int count = 0;
                         boolean balanced = true;
@@ -102,6 +114,7 @@ public class SelectCommand {
                             break;
                         }
                     }
+                    int opLength = logicOperator.length();
                     StringBuilder sb = new StringBuilder();
                     int parenCount = 0;
                     for (int i = 0; i < whereClause.length(); i++) {
@@ -113,11 +126,11 @@ public class SelectCommand {
                             parenCount--;
                             sb.append(c);
                         } else {
-                            if (parenCount == 0 && i + 2 < whereClause.length() &&
-                                    whereClause.substring(i, i + 3).equalsIgnoreCase("AND")) {
+                            if (parenCount == 0 && i + opLength <= whereClause.length() &&
+                                    whereClause.substring(i, i + opLength).equalsIgnoreCase(logicOperator)) {
                                 condStrings.add(sb.toString().trim());
                                 sb.setLength(0);
-                                i += 2; 
+                                i += opLength - 1;
                             } else {
                                 sb.append(c);
                             }
@@ -129,6 +142,7 @@ public class SelectCommand {
                 } else {
                     condStrings.add(whereClause);
                 }
+                // 处理每个条件表达式
                 for (String condStr : condStrings) {
                     while (condStr.startsWith("(") && condStr.endsWith(")")) {
                         condStr = condStr.substring(1, condStr.length() - 1).trim();
@@ -141,6 +155,7 @@ public class SelectCommand {
                     String col = parts[0].trim();
                     String op = parts[1].trim();
                     String val = parts[2].trim();
+                    // 去除引号以及非字母数字字符（保持原有逻辑）
                     val = val.replaceAll("^[\"']|[\"']$", "");
                     val = val.replaceAll("[^a-zA-Z0-9]", "");
                     System.out.println("[DEBUG] Parsed condition: '" + col + " " + op + " " + val + "'");
@@ -165,55 +180,30 @@ public class SelectCommand {
             }
             resultRows.add(String.join("\t", returnHeader));
 
-
+            // 遍历数据行
             for (int i = 1; i < lines.size(); i++) {
                 String rowLine = lines.get(i);
                 String[] rowValues = rowLine.split("\t");
                 boolean rowMatches = true;
                 if (hasWhereClause) {
-                    for (String[] cond : conditions) {
-                        String col = cond[0];
-                        String op = cond[1];
-                        String val = cond[2];
-                        int condIndex = headerList.indexOf(col);
-                        if (condIndex >= rowValues.length) {
-                            rowMatches = false;
-                            break;
+                    if (logicOperator == null) {
+                        // 单个条件
+                        rowMatches = evaluateCondition(conditions.get(0), rowValues, headerList, i);
+                    } else if (logicOperator.equals("AND")) {
+                        rowMatches = true;
+                        for (String[] cond : conditions) {
+                            if (!evaluateCondition(cond, rowValues, headerList, i)) {
+                                rowMatches = false;
+                                break;
+                            }
                         }
-                        String actualValue = rowValues[condIndex].trim();
-                        System.out.println("[DEBUG] Row " + i + " condition (" + col + " " + op + " " + val + "): '" + actualValue + "'");
-                        boolean condResult = false;
-                        switch(op) {
-                            case "==":
-                                condResult = actualValue.equalsIgnoreCase(val);
+                    } else if (logicOperator.equals("OR")) {
+                        rowMatches = false;
+                        for (String[] cond : conditions) {
+                            if (evaluateCondition(cond, rowValues, headerList, i)) {
+                                rowMatches = true;
                                 break;
-                            case "!=":
-                                condResult = !actualValue.equalsIgnoreCase(val);
-                                break;
-                            case ">":
-                                try {
-                                    condResult = Double.parseDouble(actualValue) > Double.parseDouble(val);
-                                } catch (NumberFormatException e) {
-                                    condResult = false;
-                                }
-                                break;
-                            case "<":
-                                try {
-                                    condResult = Double.parseDouble(actualValue) < Double.parseDouble(val);
-                                } catch (NumberFormatException e) {
-                                    condResult = false;
-                                }
-                                break;
-                            case "LIKE":
-                                condResult = actualValue.toLowerCase().contains(val.toLowerCase());
-                                break;
-                            default:
-                                System.out.println("[DEBUG] Unsupported operator in WHERE clause: " + op);
-                                return "[ERROR] Unsupported operator";
-                        }
-                        if (!condResult) {
-                            rowMatches = false;
-                            break;
+                            }
                         }
                     }
                 }
@@ -239,6 +229,51 @@ public class SelectCommand {
             System.out.println("[DEBUG] Exception reading table file: " + e.getMessage());
             return "[ERROR] Failed to read table";
         }
+    }
+
+    /**
+     * 根据单个条件判断当前行是否满足要求。
+     */
+    private boolean evaluateCondition(String[] cond, String[] rowValues, List<String> headerList, int rowIndex) {
+        String col = cond[0];
+        String op = cond[1];
+        String val = cond[2];
+        int condIndex = headerList.indexOf(col);
+        if (condIndex >= rowValues.length) {
+            return false;
+        }
+        String actualValue = rowValues[condIndex].trim();
+        System.out.println("[DEBUG] Row " + rowIndex + " condition (" + col + " " + op + " " + val + "): '" + actualValue + "'");
+        boolean condResult = false;
+        switch (op) {
+            case "==":
+                condResult = actualValue.equalsIgnoreCase(val);
+                break;
+            case "!=":
+                condResult = !actualValue.equalsIgnoreCase(val);
+                break;
+            case ">":
+                try {
+                    condResult = Double.parseDouble(actualValue) > Double.parseDouble(val);
+                } catch (NumberFormatException e) {
+                    condResult = false;
+                }
+                break;
+            case "<":
+                try {
+                    condResult = Double.parseDouble(actualValue) < Double.parseDouble(val);
+                } catch (NumberFormatException e) {
+                    condResult = false;
+                }
+                break;
+            case "LIKE":
+                condResult = actualValue.toLowerCase().contains(val.toLowerCase());
+                break;
+            default:
+                System.out.println("[DEBUG] Unsupported operator in WHERE clause: " + op);
+                condResult = false;
+        }
+        return condResult;
     }
 }
 

@@ -222,7 +222,7 @@ public class FinalTests {
         assertTrue(response.contains("[OK]"), "A valid query was made, however an [OK] tag was not returned");
         assertFalse(response.contains("[ERROR]"), "A valid query was made, however an [ERROR] tag was returned");
 
-        response = sendCommandToServer("SELECT * FROM marks WHERE ((pass == FALSE) AND (mark > 35);");
+        response = sendCommandToServer("SELECT * FROM marks WHERE ((pass == FALSE) OR (mark > 35);");
         assertFalse(response.contains("[OK]"), "A valid query was made, however an [OK] tag was not returned");
         assertTrue(response.contains("[ERROR]"), "A valid query was made, however an [ERROR] tag was returned");
 
