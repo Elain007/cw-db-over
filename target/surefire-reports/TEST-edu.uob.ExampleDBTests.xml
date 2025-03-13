@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uob.ExampleDBTests" time="0.091" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/test-classes:/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/surefire/surefirebooter4508647446293528640.jar /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/surefire 2025-03-13T15-29-36_799-jvmRun1 surefire16786377622268173897tmp surefire_015605606395771395487tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/test-classes:/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/apple01"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/surefire/surefirebooter4508647446293528640.jar"/>
+    <property name="user.script" value="Hans"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23.0.1+11-39"/>
+    <property name="user.name" value="apple01"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.7.6"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/apple01/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/q_/s1v0jt9s13n2lpjnyyvqrv9c0000gn/T/"/>
+    <property name="java.version" value="23.0.1"/>
+    <property name="user.dir" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/apple01/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.1+11-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="testQueryID" classname="edu.uob.ExampleDBTests" time="0.018">
+    <system-out><![CDATA[qlviluhvti
+========================
+CREATE DATABASE qlviluhvti;
+[OK] Switched to database: qlviluhvti
+========================
+
+qlviluhvti
+========================
+USE qlviluhvti;
+[OK]
+========================
+
+/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/qlviluhvti/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Simon', 65, TRUE);
+[OK] Insert successful
+========================
+
+[DEBUG] Executing SELECT command: SELECT id FROM marks WHERE name == 'Simon';
+[DEBUG] Extracted table name: 'marks'
+[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/qlviluhvti/marks.tab
+[DEBUG] Retrieved table header: id	name	mark	pass
+[DEBUG] Processed header columns: [id, name, mark, pass]
+[DEBUG] Selected columns from query: [id]
+[DEBUG] Selected column indices: [0]
+[DEBUG] Parsed condition: 'name == Simon'
+[DEBUG] Row 1 condition (name == Simon): 'Simon'
+========================
+SELECT id FROM marks WHERE name == 'Simon';
+[OK]
+id
+1
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testBasicCreateAndQuery" classname="edu.uob.ExampleDBTests" time="0.025">
+    <system-out><![CDATA[nlorakiuxm
+========================
+CREATE DATABASE nlorakiuxm;
+[OK] Switched to database: nlorakiuxm
+========================
+
+nlorakiuxm
+========================
+USE nlorakiuxm;
+[OK]
+========================
+
+/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/nlorakiuxm/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Simon', 65, TRUE);
+[OK] Insert successful
+========================
+
+========================
+INSERT INTO marks VALUES ('Sion', 55, TRUE);
+[OK] Insert successful
+========================
+
+========================
+INSERT INTO marks VALUES ('Rob', 35, FALSE);
+[OK] Insert successful
+========================
+
+========================
+INSERT INTO marks VALUES ('Chris', 20, FALSE);
+[OK] Insert successful
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM marks;
+[DEBUG] Extracted table name: 'marks'
+[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/nlorakiuxm/marks.tab
+[DEBUG] Retrieved table header: id	name	mark	pass
+[DEBUG] Processed header columns: [id, name, mark, pass]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+========================
+SELECT * FROM marks;
+[OK]
+id	name	mark	pass
+1	Simon	65	TRUE
+2	Sion	55	TRUE
+3	Rob	35	FALSE
+4	Chris	20	FALSE
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testTablePersistsAfterRestart" classname="edu.uob.ExampleDBTests" time="0.023">
+    <system-out><![CDATA[jfkqaoadlv
+========================
+CREATE DATABASE jfkqaoadlv;
+[OK] Switched to database: jfkqaoadlv
+========================
+
+jfkqaoadlv
+========================
+USE jfkqaoadlv;
+[OK]
+========================
+
+/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/jfkqaoadlv/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Simon', 65, TRUE);
+[OK] Insert successful
+========================
+
+jfkqaoadlv
+========================
+USE jfkqaoadlv;
+[OK]
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM marks;
+[DEBUG] Extracted table name: 'marks'
+[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/jfkqaoadlv/marks.tab
+[DEBUG] Retrieved table header: id	name	mark	pass
+[DEBUG] Processed header columns: [id, name, mark, pass]
+[DEBUG] Selected columns from query: [*]
+[DEBUG] Selected column indices: [0, 1, 2, 3]
+========================
+SELECT * FROM marks;
+[OK]
+id	name	mark	pass
+1	Simon	65	TRUE
+========================
+
+]]></system-out>
+  </testcase>
+  <testcase name="testForErrorTag" classname="edu.uob.ExampleDBTests" time="0.014">
+    <system-out><![CDATA[iaaoohmwqg
+========================
+CREATE DATABASE iaaoohmwqg;
+[OK] Switched to database: iaaoohmwqg
+========================
+
+iaaoohmwqg
+========================
+USE iaaoohmwqg;
+[OK]
+========================
+
+/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/iaaoohmwqg/marks.tab123456
+========================
+CREATE TABLE marks (name, mark, pass);
+[OK] Table created
+========================
+
+========================
+INSERT INTO marks VALUES ('Simon', 65, TRUE);
+[OK] Insert successful
+========================
+
+[DEBUG] Executing SELECT command: SELECT * FROM libraryfines;
+[DEBUG] Extracted table name: 'libraryfines'
+[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/iaaoohmwqg/libraryfines.tab
+[DEBUG] Table file does not exist.
+========================
+SELECT * FROM libraryfines;
+[ERROR] Table does not exist
+========================
+
+]]></system-out>
+  </testcase>
+</testsuite>
