@@ -6,7 +6,7 @@ import java.util.*;
 import java.io.File;
 
 public class Database {
-    private File rootPath;  // 修改为 File 类型
+    private File rootPath;
     private File currentDatabasePath;
     private String currentDatabase = null;
 
@@ -15,22 +15,15 @@ public class Database {
         if (!rootPath.exists()) {
             rootPath.mkdirs();
         }
-        // System.out.println("[DEBUG] Database root set to: " + rootPath.getAbsolutePath());
     }
 
     public String createDatabase(String dbName) {
         File databaseDir = new File(rootPath, dbName.toLowerCase().trim());
-        //System.out.println("[DEBUG] Creating database at: " + databaseDir.getAbsolutePath());
-
         if (databaseDir.exists()) {
             return "[ERROR] Database already exists";
         }
-
         if (databaseDir.mkdirs()) {
-            //System.out.println("[OK] Database created at: " + databaseDir.getAbsolutePath());
-            String switchResult = useDatabase(dbName);  // 创建后自动切换
-            //System.out.println("[DEBUG] After creation, current database path: " +
-                  //(currentDatabasePath != null ? currentDatabasePath.getAbsolutePath() : "null"));
+            String switchResult = useDatabase(dbName);
             return switchResult;
         }
         return "[ERROR] Failed to create database";
@@ -39,18 +32,12 @@ public class Database {
     public String useDatabase(String dbName) {
         System.out.println(dbName);
         File databaseDir = new File(rootPath, dbName.toLowerCase().trim());
-        //System.out.println("[DEBUG] Trying to switch to: " + databaseDir.getAbsolutePath());
-
         if (!databaseDir.exists() || !databaseDir.isDirectory()) {
-            //System.out.println("[DEBUG] Database does not exist: " + databaseDir.getAbsolutePath());
             return "[ERROR] Database does not exist";
         }
 
         this.currentDatabase = dbName.toLowerCase().trim();
         this.currentDatabasePath = databaseDir;
-        //System.out.println("[OK] Successfully switched to database: " + currentDatabasePath.getAbsolutePath());
-        //System.out.println("[DEBUG] Current database path after switch: " +
-                //(currentDatabasePath != null ? currentDatabasePath.getAbsolutePath() : "null"));
 
         return "[OK] Switched to database: " + dbName;
     }
@@ -59,29 +46,26 @@ public class Database {
         this.currentDatabasePath = new File(path);
     }
 
-    // 创建表：自动在表头最前面添加 "id"
+    // Create table: automatically add "id" at the front of the header.
     public String createTable(String tableName, List<String> columns) {
         if (this.currentDatabasePath == null) {
             return "[ERROR] No database selected: Database.createTable";
         }
-        // 对 tableName 进行清洗：去除非法字符、转换为小写、trim
-        String cleanedTableName = tableName.replaceAll("[^a-zA-Z0-9_]", "").toLowerCase().trim();
+        // Clean tableName
+        String cleanedTableName = tableName.replaceAll("[^a-zA-Z0-9]", "").toLowerCase().trim();
         File tableFile = new File(this.currentDatabasePath, cleanedTableName + ".tab");
         System.out.println(tableFile.toString() + "123456");
-
-        // 如果文件已存在，则认为表已经存在（即使输入了不同大小写组合也会映射到同一个文件）
         if (tableFile.exists()) {
             return "[ERROR] Table already exists";
         }
 
-        // 自动在表头添加 id 列
+        // Automatically add id column in header
         List<String> newHeaderColumns = new ArrayList<>();
         newHeaderColumns.add("id");
-        // 遍历用户提供的列（去除多余分号和空格）
+        // Traverse user-provided columns
         for (String col : columns) {
             newHeaderColumns.add(col.trim().replaceAll(";", ""));
         }
-
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(tableFile))) {
             writer.write(String.join("\t", newHeaderColumns));
         } catch (IOException e) {
@@ -91,12 +75,11 @@ public class Database {
         return "[OK] Table created";
     }
 
-
     public File getCurrentDatabasePath() {
         return this.currentDatabasePath;
     }
 
-    // **补充：删除表**
+    // Delete table
     public String dropTable(String tableName) {
         if (currentDatabasePath == null) {
             return "[ERROR] No database selected: Database.dropTable1";
@@ -112,8 +95,7 @@ public class Database {
         }
     }
 
-    // **补充：删除列**
-
+    // Delete column
     public String alterTableDropColumn(String tableName, String columnName) throws IOException {
         if (currentDatabasePath == null) {
             return "[ERROR] No database selected: Database.alterTableDropColumn";
@@ -122,17 +104,15 @@ public class Database {
         if (!tableFile.exists()) {
             return "[ERROR] Table does not exist";
         }
-
         List<String> lines = Files.readAllLines(tableFile.toPath());
         if (lines.isEmpty()) {
             return "[ERROR] Table is empty";
         }
-
-        // 读取原始表头
+        // Read the original header
         String headerLine = lines.get(0);
         System.out.println("[DEBUG] Original table header: " + headerLine);
 
-        // 拆分表头列并对每个列名进行 trim 处理
+        // Split header columns and trim each column name.
         String[] columns = headerLine.split("\t");
         List<String> trimmedColumns = new ArrayList<>();
         for (int i = 0; i < columns.length; i++) {
@@ -142,7 +122,7 @@ public class Database {
         }
         System.out.println("[DEBUG] Full processed header: " + trimmedColumns);
 
-        // 对比时也要对传入的 columnName 进行 trim
+        // Trim the incoming columnName when comparing.
         String targetColumn = columnName.trim();
         System.out.println("[DEBUG] Column to drop (target): '" + targetColumn + "'");
 
@@ -158,14 +138,14 @@ public class Database {
             return "[ERROR] Column does not exist";
         }
 
-        // 检查是否尝试删除主键 "id"
+        // Check if you are trying to delete the primary key "id"
         if (targetColumn.equalsIgnoreCase("id")) {
             return "[ERROR] Cannot drop primary key";
         }
-        // 构造新的表头，不包含被删除的列
+        // Construct a new header that does not contain the deleted columns.
         StringBuilder newHeader = new StringBuilder();
         for (int i = 0; i < trimmedColumns.size(); i++) {
-            if (i == columnIndex) continue;  // 跳过要删除的列
+            if (i == columnIndex) continue;
             if (newHeader.length() > 0) {
                 newHeader.append("\t");
             }
@@ -173,7 +153,10 @@ public class Database {
         }
         System.out.println("[DEBUG] New table header after dropping column: " + newHeader.toString());
 
-        // 构造新内容：第一行为新的表头，其余每行删除对应列的数据
+        /**
+         * Construct new content: the first line is a new header, 
+         * and the data of the corresponding column is deleted in each other line.
+        */ 
         List<String> newLines = new ArrayList<>();
         newLines.add(newHeader.toString());
         for (int j = 1; j < lines.size(); j++) {
@@ -191,10 +174,10 @@ public class Database {
             newLines.add(newLine.toString());
         }
 
-        // 将更新后的内容写回文件
+        // Write the updated content back to the file.
         Files.write(tableFile.toPath(), newLines);
 
-        // 重新读取文件以确认新表头是否写入成功
+        // Re-read the file to confirm whether the new header was written successfully.
         List<String> checkLines = Files.readAllLines(tableFile.toPath());
         if (!checkLines.isEmpty()) {
             System.out.println("[DEBUG] Verified new table header from file: " + checkLines.get(0));
@@ -207,10 +190,9 @@ public class Database {
 
 
 
-    // **补充：合并表**
+    // Consolidated table
     public String joinTables(String table1, String table2, String column1, String column2) throws IOException {
         if (currentDatabasePath == null) {
-            //System.out.println("[DEBUG] No database selected in selectFromTable()");
             return "[ERROR] No database selected: Database.selectFromTable";
         }
         File table1File = new File(currentDatabasePath, table1.replaceAll("[^a-zA-Z0-9_]", "").toLowerCase().trim() + ".tab");
@@ -259,19 +241,14 @@ public class Database {
         return "[OK]" + System.lineSeparator() + joinedTable.getTableString();
     }
 
-    // **补充：查询表**
+    // polling list
     public String selectFromTable(String tableName) {
         if (currentDatabasePath == null) {
-            //System.out.println("[DEBUG] No database selected in selectFromTable()");
             return "[ERROR] No database selected: Database.selectFromTable";
         }
-        // 处理表名，去掉非法字符
-        File tableFile = new File(currentDatabasePath, tableName.replaceAll("[^a-zA-Z0-9_]", "").toLowerCase().trim() + ".tab");
-
-        //System.out.println("[DEBUG] Attempting to retrieve data from table: " + tableFile.getAbsolutePath());
-
+        // Handle table names and remove illegal characters.
+        File tableFile = new File(currentDatabasePath, tableName.replaceAll("[^a-zA-Z0-9]", "").toLowerCase().trim() + ".tab");
         if (!tableFile.exists()) {
-            //System.out.println("[DEBUG] Table does not exist: " + tableFile.getAbsolutePath());
             return "[ERROR] Table does not exist";
         }
 
@@ -287,54 +264,41 @@ public class Database {
         }
     }
 
-    // **补充：插入数据**
-    // 插入数据：自动生成 id 值（新行 id 为当前数据行数，即 header 行算作第1行）
+    // Insert data
     public String insertIntoTable(String tableName, List<String> values) {
         if (currentDatabasePath == null) {
-            //System.out.println("[DEBUG] No database selected in insertIntoTable()");
             return "[ERROR] No database selected: Database: insertIntoTable";
         }
         String cleanedTableName = tableName.toLowerCase().trim();
         File tableFile = new File(currentDatabasePath, cleanedTableName + ".tab");
-        //System.out.println("[DEBUG] Inserting into table file: " + tableFile.getAbsolutePath());
-        //System.out.println("[DEBUG] Original insert values: " + values);
-
         if (!tableFile.exists()) {
-            //System.out.println("[DEBUG] Table file does not exist: " + tableFile.getAbsolutePath());
             return "[ERROR] Table does not exist";
         }
 
         try {
-            // 读取当前行数，以计算下一个 id
             List<String> lines = Files.readAllLines(tableFile.toPath());
-            int nextId = lines.size(); // header占一行，所以第一条数据 id 为 1
-            // 构造新行：id + 原始值（每个值不作额外修改）
+            int nextId = lines.size();
             List<String> newRow = new ArrayList<>();
             newRow.add(String.valueOf(nextId));
             newRow.addAll(values);
-            //System.out.println("[DEBUG] New row to insert (with id): " + newRow);
 
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(tableFile, true))) {
                 writer.newLine();
                 writer.write(String.join("\t", newRow));
             }
-            //System.out.println("[DEBUG] Insert successful into table file: " + tableFile.getAbsolutePath());
             return "[OK] Insert successful";
         } catch (IOException e) {
-            //System.out.println("[DEBUG] Insert failed: " + e.getMessage());
             return "[ERROR] Insert failed";
         }
     }
 
-    // **检查数据库是否存在**
+    // Check whether the database exists.
     public boolean databaseExists(String dbName) {
         File databaseDir = new File(rootPath, dbName.toLowerCase());
         return databaseDir.exists();
     }
 
-    // **创建数据库**
-
-    // **删除数据库**
+    // Delete database
     public String dropDatabase(String dbName) {
         File databaseDir = new File(rootPath, dbName.toLowerCase().trim().replace(";", ""));
         if (!databaseDir.exists()) {
@@ -346,7 +310,7 @@ public class Database {
         return "[ERROR] Failed to drop database";
     }
 
-    // **递归删除文件夹**
+    // Recursively delete folders
     private boolean deleteDirectory(File dir) {
         if (dir.isDirectory()) {
             for (File file : Objects.requireNonNull(dir.listFiles())) {
@@ -356,13 +320,11 @@ public class Database {
         return dir.delete();
     }
 
-
     public String getCurrentDatabase() {
         return currentDatabase;
     }
 
-    // 在 Database.java 中，其他方法之后新增：
-// **补充：添加列**
+    // Add column
     public String alterTableAddColumn(String tableName, String columnName) {
         if (currentDatabasePath == null) {
             return "[ERROR] No database selected: Database.alterTableAddColumn";
@@ -380,7 +342,6 @@ public class Database {
         if (lines.isEmpty()) {
             return "[ERROR] Table is empty";
         }
-        // 获取现有表头
         String headerLine = lines.get(0);
         String[] columns = headerLine.split("\t");
         for (String col : columns) {
@@ -388,11 +349,9 @@ public class Database {
                 return "[ERROR] Duplicate column name: " + columnName;
             }
         }
-        // 构造新的表头：在原有表头后追加新列（统一转为小写）
         String newHeader = headerLine + "\t" + columnName.trim().toLowerCase();
         List<String> newLines = new ArrayList<>();
         newLines.add(newHeader);
-        // 对于每一行数据，追加一个空字段
         for (int i = 1; i < lines.size(); i++) {
             newLines.add(lines.get(i) + "\t ");
         }
@@ -403,7 +362,6 @@ public class Database {
         }
         return "[OK] Column added";
     }
-
 }
 
 

@@ -17,26 +17,20 @@ public class CreateTableCommand {
         if (database.getCurrentDatabasePath() == null) {
             return "[ERROR] No database selected: CreateTableCommand.execute";
         }
-
         if (tokens.length < 3) {
             return "[ERROR] Invalid CREATE TABLE syntax";
         }
-
         String tableName = tokens[2].replaceAll(";", "").trim();
-
-        // 将后续所有 tokens 拼接为列定义字符串，去除括号
         StringBuilder columnsBuilder = new StringBuilder();
         for (int i = 3; i < tokens.length; i++) {
             columnsBuilder.append(tokens[i]).append(" ");
         }
         String columnsStr = columnsBuilder.toString().trim().replaceAll("[()]", "");
         String[] rawColumns = columnsStr.split(",");
-
         List<String> columns = new ArrayList<>();
         for (String col : rawColumns) {
             String trimmed = col.trim().replaceAll(";", "").toLowerCase();
-
-            if (!trimmed.matches("^[a-zA-Z_][a-zA-Z0-9_]*$") &&
+            if (!trimmed.matches("^[a-zA-Z][a-zA-Z0-9]*$") &&
                     !trimmed.isEmpty()) {
                 return "[ERROR] Invalid column name: " + trimmed;
             }
@@ -46,11 +40,7 @@ public class CreateTableCommand {
             }
             columns.add(trimmed);
         }
-
         return database.createTable(tableName, columns);
     }
-
-
-
 }
 

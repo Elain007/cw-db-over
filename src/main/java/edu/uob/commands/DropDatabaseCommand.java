@@ -14,8 +14,6 @@ public class DropDatabaseCommand {
             return "[ERROR] Invalid DROP DATABASE syntax";
         }
         String databaseName = tokens[2].toLowerCase();
-
-        // 直接调用，不再使用 try-catch
         return database.dropDatabase(databaseName);
     }
 }

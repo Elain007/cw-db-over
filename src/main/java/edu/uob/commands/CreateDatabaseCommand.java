@@ -17,8 +17,5 @@ public class CreateDatabaseCommand {
         String dbName = tokens[2].replaceAll(";", "").trim();
         return database.createDatabase(dbName);
     }
-
-
-
 }
 

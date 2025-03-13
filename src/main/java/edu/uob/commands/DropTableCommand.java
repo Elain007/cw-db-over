@@ -7,9 +7,7 @@ public class DropTableCommand {
     private final Database database;
 
     public DropTableCommand(Database database) {
-
         this.database = database;
-
     }
 
     public String execute(String[] tokens) {

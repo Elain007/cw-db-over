@@ -15,20 +15,13 @@ public class DeleteCommand {
         this.database = database;
     }
 
-    /**
-     * 扩展后的 DELETE 命令执行函数，支持形如
-     * “DELETE FROM tableName WHERE conditionColumn == 'someValue';”
-     * 的删除语句
-     * @param tokens 命令拆分后的字符串数组
-     * @return 执行结果字符串
-     */
     public String execute(String[] tokens) {
         if (tokens.length < 5) {
             System.out.println("[DEBUG] DELETE syntax invalid: tokens length " + tokens.length);
             return "[ERROR] Invalid DELETE syntax";
         }
 
-        // 支持两种 DELETE 语法：
+        // Two DELETE syntax are supported:
         // 1. DELETE FROM tableName WHERE conditionColumn operator conditionValue
         // 2. DELETE tableName WHERE conditionColumn operator conditionValue
         String tableName;
@@ -41,13 +34,13 @@ public class DeleteCommand {
             whereStartIndex = 2;
         }
 
-        // 检查 WHERE 关键字是否存在
+        // Check whether the WHERE keyword exists.
         if (tokens.length <= whereStartIndex || !tokens[whereStartIndex].equalsIgnoreCase("WHERE")) {
             System.out.println("[DEBUG] DELETE command missing WHERE clause");
             return "[ERROR] DELETE command must contain a WHERE clause";
         }
 
-        // 获取数据库目录（假设 Database 类提供 getCurrentDatabasePath() 方法）
+        // Get the database directory
         File databasePath = database.getCurrentDatabasePath();
         File tableFile = new File(databasePath, tableName + ".tab");
         if (!tableFile.exists()) {
@@ -55,7 +48,7 @@ public class DeleteCommand {
             return "[ERROR] Table does not exist";
         }
 
-        // 读取表文件内容
+        // Read table file content
         List<String> lines;
         try {
             lines = Files.readAllLines(tableFile.toPath());
@@ -68,7 +61,7 @@ public class DeleteCommand {
             return "[ERROR] Table is empty";
         }
 
-        // 解析表头
+        // Analytic header
         String headerLine = lines.get(0);
         String[] headerColumns = headerLine.split("\t");
         List<String> headerList = new ArrayList<>();
@@ -76,7 +69,7 @@ public class DeleteCommand {
             headerList.add(header.trim());
         }
 
-        // 解析 WHERE 条件：期望 WHERE 后面有三个部分：条件列、操作符和条件值
+        // Analytic WHERE condition
         if (tokens.length < whereStartIndex + 4) {
             System.out.println("[DEBUG] Invalid WHERE syntax in DELETE: tokens length " + tokens.length + ", expected at least " + (whereStartIndex + 4));
             return "[ERROR] Invalid WHERE syntax";
@@ -93,8 +86,8 @@ public class DeleteCommand {
             System.out.println("[DEBUG] Cleaned DELETE WHERE condition value: '" + conditionValue + "'");
         }
 
-        // 清除 conditionValue 中除数字、字母、下划线之外的所有字符
-        conditionValue = conditionValue.replaceAll("[^a-zA-Z0-9_]", "");
+        // Clear all characters except numbers and letters in conditionValue.
+        conditionValue = conditionValue.replaceAll("[^a-zA-Z0-9]", "");
         System.out.println("[DEBUG] Cleaned DELETE WHERE condition value: '" + conditionValue + "'");
 
         if (!headerList.contains(conditionColumn)) {
@@ -102,9 +95,9 @@ public class DeleteCommand {
             return "[ERROR] Column '" + conditionColumn + "' does not exist";
         }
 
-        // 遍历数据行，删除满足 WHERE 条件的行
+        // Traverse the data rows and delete the rows that meet the WHERE condition.
         List<String> newLines = new ArrayList<>();
-        newLines.add(headerLine); // 保留表头
+        newLines.add(headerLine); 
         for (int i = 1; i < lines.size(); i++) {
             String rowLine = lines.get(i);
             String[] rowValues = rowLine.split("\t", -1);
@@ -145,7 +138,7 @@ public class DeleteCommand {
             } else {
                 rowMatches = false;
             }
-            // 如果行不满足删除条件，则保留该行；否则不添加（即删除）
+
             if (!rowMatches) {
                 newLines.add(rowLine);
             }else {
@@ -153,7 +146,6 @@ public class DeleteCommand {
             }
         }
 
-        // 写回更新后的数据到表文件
         try {
             Files.write(tableFile.toPath(), newLines);
             System.out.println("[DEBUG] Successfully wrote updated data to table file: " + tableFile.getAbsolutePath());
