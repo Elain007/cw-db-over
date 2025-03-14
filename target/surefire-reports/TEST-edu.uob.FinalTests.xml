@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uob.FinalTests" time="0.458" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uob.FinalTests" time="0.41" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/test-classes:/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
+    <property name="java.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/test-classes:/Users/apple01/cw-db加测试版/cw-db-over/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
@@ -12,9 +12,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/surefire/surefirebooter4508647446293528640.jar /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/surefire 2025-03-13T15-29-36_799-jvmRun1 surefire16786377622268173897tmp surefire_015605606395771395487tmp"/>
+    <property name="sun.java.command" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter17147195507572178489.jar /Users/apple01/cw-db加测试版/cw-db-over/target/surefire 2025-03-14T00-19-36_834-jvmRun1 surefire17773806479281633244tmp surefire_06226917945568132960tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/test-classes:/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
+    <property name="surefire.test.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/test-classes:/Users/apple01/cw-db加测试版/cw-db-over/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/apple01"/>
     <property name="user.language" value="zh"/>
@@ -22,13 +22,13 @@
     <property name="java.version.date" value="2024-10-15"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db"/>
+    <property name="basedir" value="/Users/apple01/cw-db加测试版/cw-db-over"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/target/surefire/surefirebooter4508647446293528640.jar"/>
+    <property name="surefire.real.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter17147195507572178489.jar"/>
     <property name="user.script" value="Hans"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -43,7 +43,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/var/folders/q_/s1v0jt9s13n2lpjnyyvqrv9c0000gn/T/"/>
     <property name="java.version" value="23.0.1"/>
-    <property name="user.dir" value="/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db"/>
+    <property name="user.dir" value="/Users/apple01/cw-db加测试版/cw-db-over"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
@@ -55,20 +55,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testDoc" classname="edu.uob.FinalTests" time="0.247">
-    <system-out><![CDATA[rtrnnurdiv
-========================
-CREATE DATABASE rtrnnurdiv;
-[OK] Switched to database: rtrnnurdiv
+  <testcase name="testDoc" classname="edu.uob.FinalTests" time="0.196">
+    <system-out><![CDATA[========================
+CREATE DATABASE ubuhpqgcej;
+[OK] Switched to database: ubuhpqgcej
 ========================
 
-rtrnnurdiv
 ========================
-USE rtrnnurdiv;
+USE ubuhpqgcej;
 [OK]
 ========================
 
-/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab123456
 ========================
 CREATE TABLE Marks (name, mark, pass);
 [OK] Table created
@@ -94,7 +91,6 @@ INSERT INTO marks VALUES ('Chris', 20, FALSE);
 [OK] Insert successful
 ========================
 
-/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/coursework.tab123456
 ========================
 CREATE TABLE coursework (task, submission);
 [OK] Table created
@@ -120,13 +116,6 @@ INSERT INTO coursework VALUES ('STAG', 2);
 [OK] Insert successful
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks;
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
 ========================
 SELECT * FROM marks;
 [OK]
@@ -155,48 +144,11 @@ id	coursework.task	marks.name	marks.mark	marks.pass
 3	OXO	Chris	20	FALSE
 4	STAG	Sion	55	TRUE
 
-[DEBUG] Update assignment: column='mark', newValue='38'
-[DEBUG] Parsed WHERE condition: column='name', operator='==', raw value=''Chris';'
-[DEBUG] Cleaned WHERE condition value: 'Chris'
-1123
-Simon123
-65123
-TRUE123
-[DEBUG] Row 1 actual value for column 'name': 'Simon'
-2123
-Sion123
-55123
-TRUE123
-[DEBUG] Row 2 actual value for column 'name': 'Sion'
-3123
-Rob123
-35123
-FALSE123
-[DEBUG] Row 3 actual value for column 'name': 'Rob'
-4123
-Chris123
-20123
-FALSE123
-[DEBUG] Row 4 actual value for column 'name': 'Chris'
-[DEBUG] Row 4 updated column 'mark' to '38'
-[DEBUG] Successfully wrote updated data to table file: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
 ========================
 UPDATE marks SET mark = 38 WHERE name == 'Chris';
 [OK] Update successful
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE name == 'Chris';
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'name == Chris'
-[DEBUG] Row 1 condition (name == Chris): 'Simon'
-[DEBUG] Row 2 condition (name == Chris): 'Sion'
-[DEBUG] Row 3 condition (name == Chris): 'Rob'
-[DEBUG] Row 4 condition (name == Chris): 'Chris'
 ========================
 SELECT * FROM marks WHERE name == 'Chris';
 [OK]
@@ -204,26 +156,11 @@ id	name	mark	pass
 4	Chris	38	FALSE
 ========================
 
-[DEBUG] Parsed DELETE WHERE condition: column='name', operator='==', raw value=''Sion';'
-[DEBUG] Cleaned DELETE WHERE condition value: 'Sion'
-[DEBUG] Row 1 actual value for DELETE, column 'name': 'Simon'
-[DEBUG] Row 2 actual value for DELETE, column 'name': 'Sion'
-[DEBUG] Row 2 matched DELETE condition and will be removed
-[DEBUG] Row 3 actual value for DELETE, column 'name': 'Rob'
-[DEBUG] Row 4 actual value for DELETE, column 'name': 'Chris'
-[DEBUG] Successfully wrote updated data to table file: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
 ========================
 DELETE FROM marks WHERE name == 'Sion';
 [OK] Delete successful
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks;
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
 ========================
 SELECT * FROM marks;
 [OK]
@@ -233,20 +170,6 @@ id	name	mark	pass
 4	Chris	38	FALSE
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: 'mark > 35'
-[DEBUG] Row 1 condition (pass == FALSE): 'TRUE'
-[DEBUG] Row 2 condition (pass == FALSE): 'FALSE'
-[DEBUG] Row 2 condition (mark > 35): '35'
-[DEBUG] Row 3 condition (pass == FALSE): 'FALSE'
-[DEBUG] Row 3 condition (mark > 35): '38'
 ========================
 SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
 [OK]
@@ -254,17 +177,6 @@ id	name	mark	pass
 4	Chris	38	FALSE
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE name LIKE 'i';
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'name LIKE i'
-[DEBUG] Row 1 condition (name LIKE i): 'Simon'
-[DEBUG] Row 2 condition (name LIKE i): 'Rob'
-[DEBUG] Row 3 condition (name LIKE i): 'Chris'
 ========================
 SELECT * FROM marks WHERE name LIKE 'i';
 [OK]
@@ -278,13 +190,6 @@ ALTER TABLE marks ADD age;
 [OK] Column added
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks;
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass	age
-[DEBUG] Processed header columns: [id, name, mark, pass, age]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3, 4]
 ========================
 SELECT * FROM marks;
 [OK]
@@ -294,57 +199,17 @@ id	name	mark	pass	age
 4	Chris	38	FALSE	
 ========================
 
-[DEBUG] Original table header: id	name	mark	pass	age
-[DEBUG] Processed Header Column 0: 'id'
-[DEBUG] Processed Header Column 1: 'name'
-[DEBUG] Processed Header Column 2: 'mark'
-[DEBUG] Processed Header Column 3: 'pass'
-[DEBUG] Processed Header Column 4: 'age'
-[DEBUG] Full processed header: [id, name, mark, pass, age]
-[DEBUG] Column to drop (target): 'pass'
-[DEBUG] Found column 'pass' at index: 3
-[DEBUG] New table header after dropping column: id	name	mark	age
-[DEBUG] New row 1: 1	Simon	65	
-[DEBUG] New row 2: 3	Rob	35	
-[DEBUG] New row 3: 4	Chris	38	
 [DEBUG] Verified new table header from file: id	name	mark	age
 ========================
 ALTER TABLE marks DROP pass;
 [OK] Column dropped
 ========================
 
-[DEBUG] Update assignment: column='age', newValue='35'
-[DEBUG] Parsed WHERE condition: column='name', operator='==', raw value=''Simon';'
-[DEBUG] Cleaned WHERE condition value: 'Simon'
-1123
-Simon123
-65123
-123
-[DEBUG] Row 1 actual value for column 'name': 'Simon'
-[DEBUG] Row 1 updated column 'age' to '35'
-3123
-Rob123
-35123
-123
-[DEBUG] Row 2 actual value for column 'name': 'Rob'
-4123
-Chris123
-38123
-123
-[DEBUG] Row 3 actual value for column 'name': 'Chris'
-[DEBUG] Successfully wrote updated data to table file: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
 ========================
 UPDATE marks SET age = 35 WHERE name == 'Simon';
 [OK] Update successful
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks;
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	age
-[DEBUG] Processed header columns: [id, name, mark, age]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
 ========================
 SELECT * FROM marks;
 [OK]
@@ -354,54 +219,39 @@ id	name	mark	age
 4	Chris	38
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM crew;
-[DEBUG] Extracted table name: 'crew'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/crew.tab
-[DEBUG] Table file does not exist.
 ========================
 SELECT * FROM crew;
 [ERROR] Table does not exist
 ========================
 
-[DEBUG] Executing SELECT command: SELECT height FROM marks WHERE name == 'Chris';
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/rtrnnurdiv/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	age
-[DEBUG] Processed header columns: [id, name, mark, age]
-[DEBUG] Selected columns from query: [height]
-[DEBUG] Column 'height' not found in header.
 ========================
 SELECT height FROM marks WHERE name == 'Chris';
 [ERROR] Column 'height' does not exist
 ========================
 
-[DEBUG] DROP TABLE command for table: marks;
 ========================
 DROP TABLE marks;
 [OK] Table dropped
 ========================
 
 ========================
-DROP DATABASE rtrnnurdiv;
+DROP DATABASE ubuhpqgcej;
 [OK] Database dropped
 ========================
 
 ]]></system-out>
   </testcase>
-  <testcase name="testDifficult2" classname="edu.uob.FinalTests" time="0.062">
-    <system-out><![CDATA[vhcceexttg
-========================
-CREATE DATABASE vhcceexttg;
-[OK] Switched to database: vhcceexttg
+  <testcase name="testDifficult2" classname="edu.uob.FinalTests" time="0.022">
+    <system-out><![CDATA[========================
+CREATE DATABASE ewafuknxmv;
+[OK] Switched to database: ewafuknxmv
 ========================
 
-vhcceexttg
 ========================
-USE vhcceexttg;
+USE ewafuknxmv;
 [OK]
 ========================
 
-/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/vhcceexttg/marks.tab123456
 ========================
 CREATE TABLE marks (name, mark, pass);
 [OK] Table created
@@ -412,45 +262,23 @@ INSERT INTO marks VALUES('%.{$abc}abc', 65.1, TRUE);
 [OK] Insert successful
 ========================
 
-vhcceexttg
 ========================
-USE vhcceexttg;
+USE ewafuknxmv;
 [OK]
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/vhcceexttg/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: 'mark > 35'
-[DEBUG] Row 1 condition (pass == FALSE): 'TRUE'
 ========================
 SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
 [OK]
 id	name	mark	pass
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/vhcceexttg/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: 'mark > 35'
-[DEBUG] Row 1 condition (pass == FALSE): 'TRUE'
 ========================
 SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
 [OK]
 id	name	mark	pass
 ========================
 
-[DEBUG] DROP TABLE command for table: balabala;
 ========================
 drop table balabala;
 [ERROR] Table does not exist
@@ -463,20 +291,17 @@ drop database balabala;
 
 ]]></system-out>
   </testcase>
-  <testcase name="testUpperCases" classname="edu.uob.FinalTests" time="0.054">
-    <system-out><![CDATA[OQBPFHAAWJ
-========================
-CREATE DATABASE OQBPFHAAWJ;
-[OK] Switched to database: OQBPFHAAWJ
+  <testcase name="testUpperCases" classname="edu.uob.FinalTests" time="0.025">
+    <system-out><![CDATA[========================
+CREATE DATABASE AYSWDAYVJC;
+[OK] Switched to database: AYSWDAYVJC
 ========================
 
-OQBPFHAAWJ
 ========================
-USE  OQBPFHAAWJ;
+USE  AYSWDAYVJC;
 [OK]
 ========================
 
-/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/oqbpfhaawj/marks.tab123456
 ========================
 CREATE TABLE marKs (name, mark, pass);
 [OK] Table created
@@ -492,104 +317,52 @@ INSERT INTO Marks VALUES('%.{$abc}abc', 65.1, TRUE);
 [OK] Insert successful
 ========================
 
-oqbpfHAAWJ
 ========================
-USE oqbpfHAAWJ;
+USE ayswdAYVJC;
 [OK]
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM MARKS WHERE (pass == FALSE) AND (mark > 35);
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/oqbpfhaawj/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: 'mark > 35'
-[DEBUG] Row 1 condition (pass == FALSE): 'TRUE'
 ========================
 SELECT * FROM MARKS WHERE (pass == FALSE) AND (mark > 35);
 [OK]
 id	name	mark	pass
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/oqbpfhaawj/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: 'mark > 35'
-[DEBUG] Row 1 condition (pass == FALSE): 'TRUE'
 ========================
 SELECT * FROM marks WHERE (pass == FALSE) AND (mark > 35);
 [OK]
 id	name	mark	pass
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE () AND ();
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/oqbpfhaawj/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Invalid WHERE clause detected: ''
 ========================
 SELECT * FROM marks WHERE () AND ();
 [ERROR] Invalid WHERE clause
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE ((pass == FALSE) AND (mark > 35));
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/oqbpfhaawj/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: 'mark > 35'
-[DEBUG] Row 1 condition (pass == FALSE): 'TRUE'
 ========================
 SELECT * FROM marks WHERE ((pass == FALSE) AND (mark > 35));
 [OK]
 id	name	mark	pass
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks WHERE ((pass == FALSE) AND (mark > 35);
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/oqbpfhaawj/marks.tab
-[DEBUG] Retrieved table header: id	name	mark	pass
-[DEBUG] Processed header columns: [id, name, mark, pass]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2, 3]
-[DEBUG] Parsed condition: 'pass == FALSE'
-[DEBUG] Parsed condition: '(mark > 35'
-[DEBUG] WHERE column '(mark' not found in header.
 ========================
-SELECT * FROM marks WHERE ((pass == FALSE) AND (mark > 35);
+SELECT * FROM marks WHERE ((pass == FALSE) OR (mark > 35);
 [ERROR] Column (mark does not exist
 ========================
 
 ]]></system-out>
   </testcase>
-  <testcase name="testDifficult" classname="edu.uob.FinalTests" time="0.063">
-    <system-out><![CDATA[tdsvssbuuy
-========================
-CREATE DATABASE tdsvssbuuy;
-[OK] Switched to database: tdsvssbuuy
+  <testcase name="testDifficult" classname="edu.uob.FinalTests" time="0.054">
+    <system-out><![CDATA[========================
+CREATE DATABASE fwmuwkfudb;
+[OK] Switched to database: fwmuwkfudb
 ========================
 
-tdsvssbuuy
 ========================
-USE tdsvssbuuy;
+USE fwmuwkfudb;
 [OK]
 ========================
 
-/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/tdsvssbuuy/marks.tab123456
 ========================
 CREATE TABLE marks (name, mark, pass);
 [OK] Table created
@@ -615,7 +388,6 @@ INSERT INTO marks VALUES ('Chris', 20, FALSE);
 [OK] Insert successful
 ========================
 
-/Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/tdsvssbuuy/coursework.tab123456
 ========================
 CREATE TABLE coursework (task, submission);
 [OK] Table created
@@ -642,57 +414,26 @@ INSERT INTO coursework VALUES ('STAG', 2);
 ========================
 
 ========================
-INSERT INTO coursework VALUES ('STAG); drop database tdsvssbuuy;', 2);
+INSERT INTO coursework VALUES ('STAG); drop database fwmuwkfudb;', 2);
 [OK] Insert successful
 ========================
 
-[DEBUG] Original table header: id	name	mark	pass
-[DEBUG] Processed Header Column 0: 'id'
-[DEBUG] Processed Header Column 1: 'name'
-[DEBUG] Processed Header Column 2: 'mark'
-[DEBUG] Processed Header Column 3: 'pass'
-[DEBUG] Full processed header: [id, name, mark, pass]
-[DEBUG] Column to drop (target): 'pass'
-[DEBUG] Found column 'pass' at index: 3
-[DEBUG] New table header after dropping column: id	name	mark
-[DEBUG] New row 1: 1	Simon	65
-[DEBUG] New row 2: 2	Sion	55
-[DEBUG] New row 3: 3	Rob	35
-[DEBUG] New row 4: 4	Chris	20
 [DEBUG] Verified new table header from file: id	name	mark
 ========================
 ALTER TABLE marks DROP pass;
 [OK] Column dropped
 ========================
 
-[DEBUG] Executing SELECT command: SELECT * FROM marks where pass == NULL;
-[DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/Desktop/IDEA/JAVA2024/Weekly Workbooks/07 DB assignment/resources/cw-db/databases/tdsvssbuuy/marks.tab
-[DEBUG] Retrieved table header: id	name	mark
-[DEBUG] Processed header columns: [id, name, mark]
-[DEBUG] Selected columns from query: [*]
-[DEBUG] Selected column indices: [0, 1, 2]
-[DEBUG] Parsed condition: 'pass == NULL'
-[DEBUG] WHERE column 'pass' not found in header.
 ========================
 SELECT * FROM marks where pass == NULL;
 [ERROR] Column pass does not exist
 ========================
 
-[DEBUG] Update assignment: column='id', newValue='3'
-[DEBUG] Attempt to update primary key 'id' detected
 ========================
 update marks set id=3 where mark==65;
 [ERROR] Cannot update primary key
 ========================
 
-[DEBUG] Original table header: id	name	mark
-[DEBUG] Processed Header Column 0: 'id'
-[DEBUG] Processed Header Column 1: 'name'
-[DEBUG] Processed Header Column 2: 'mark'
-[DEBUG] Full processed header: [id, name, mark]
-[DEBUG] Column to drop (target): 'id'
-[DEBUG] Found column 'id' at index: 0
 ========================
 ALTER TABLE marks DROP id;
 [ERROR] Cannot drop primary key

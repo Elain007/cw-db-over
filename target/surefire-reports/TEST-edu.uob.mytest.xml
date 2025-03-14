@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uob.mytest" time="0.457" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uob.mytest" time="0.406" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter16278248503870322838.jar /Users/apple01/cw-db加测试版/cw-db-over/target/surefire 2025-03-13T23-40-35_155-jvmRun1 surefire89159652822121915tmp surefire_05873484714851745882tmp"/>
+    <property name="sun.java.command" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter81004872206867354.jar /Users/apple01/cw-db加测试版/cw-db-over/target/surefire 2025-03-14T00-11-01_064-jvmRun1 surefire6633230251686551872tmp surefire_014057483013428175367tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="edu.uob.mytest"/>
     <property name="surefire.test.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/test-classes:/Users/apple01/cw-db加测试版/cw-db-over/target/classes:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/apple01/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/Users/apple01/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter16278248503870322838.jar"/>
+    <property name="surefire.real.class.path" value="/Users/apple01/cw-db加测试版/cw-db-over/target/surefire/surefirebooter81004872206867354.jar"/>
     <property name="user.script" value="Hans"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -56,20 +56,20 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testSelectConditions" classname="edu.uob.mytest" time="0.278">
-    <system-out><![CDATA[ksnxaseknw
+  <testcase name="testSelectConditions" classname="edu.uob.mytest" time="0.166">
+    <system-out><![CDATA[yrjrsbrpqg
 ========================
-CREATE DATABASE ksnxaseknw;
-[OK] Switched to database: ksnxaseknw
+CREATE DATABASE yrjrsbrpqg;
+[OK] Switched to database: yrjrsbrpqg
 ========================
 
-ksnxaseknw
+yrjrsbrpqg
 ========================
-USE ksnxaseknw;
+USE yrjrsbrpqg;
 [OK]
 ========================
 
-/Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab123456
+/Users/apple01/cw-db加测试版/cw-db-over/databases/yrjrsbrpqg/person.tab123456
 ========================
 CREATE TABLE person (name, age, city);
 [OK] Table created
@@ -92,7 +92,7 @@ INSERT INTO person VALUES ('Charlie', 35, 'Chicago');
 
 [DEBUG] Executing SELECT command: SELECT * FROM person WHERE ((age > 26) OR (city == 'LosAngeles'));
 [DEBUG] Extracted table name: 'person'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/yrjrsbrpqg/person.tab
 [DEBUG] Retrieved table header: id	name	age	city
 [DEBUG] Processed header columns: [id, name, age, city]
 [DEBUG] Selected columns from query: [*]
@@ -114,7 +114,7 @@ id	name	age	city
 
 [DEBUG] Executing SELECT command: SELECT * FROM person WHERE ((age > 26) AND (city == 'Chicago'));
 [DEBUG] Extracted table name: 'person'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/yrjrsbrpqg/person.tab
 [DEBUG] Retrieved table header: id	name	age	city
 [DEBUG] Processed header columns: [id, name, age, city]
 [DEBUG] Selected columns from query: [*]
@@ -135,7 +135,7 @@ id	name	age	city
 
 [DEBUG] Executing SELECT command: SELECT * FROM person WHERE (name LIKE 'Al');
 [DEBUG] Extracted table name: 'person'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/ksnxaseknw/person.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/yrjrsbrpqg/person.tab
 [DEBUG] Retrieved table header: id	name	age	city
 [DEBUG] Processed header columns: [id, name, age, city]
 [DEBUG] Selected columns from query: [*]
@@ -153,20 +153,20 @@ id	name	age	city
 
 ]]></system-out>
   </testcase>
-  <testcase name="testQueryID" classname="edu.uob.mytest" time="0.02">
-    <system-out><![CDATA[asduvsrxsr
+  <testcase name="testQueryID" classname="edu.uob.mytest" time="0.112">
+    <system-out><![CDATA[hlrskzlidt
 ========================
-CREATE DATABASE asduvsrxsr;
-[OK] Switched to database: asduvsrxsr
+CREATE DATABASE hlrskzlidt;
+[OK] Switched to database: hlrskzlidt
 ========================
 
-asduvsrxsr
+hlrskzlidt
 ========================
-USE asduvsrxsr;
+USE hlrskzlidt;
 [OK]
 ========================
 
-/Users/apple01/cw-db加测试版/cw-db-over/databases/asduvsrxsr/marks.tab123456
+/Users/apple01/cw-db加测试版/cw-db-over/databases/hlrskzlidt/marks.tab123456
 ========================
 CREATE TABLE marks (name, mark, pass);
 [OK] Table created
@@ -179,7 +179,7 @@ INSERT INTO marks VALUES ('Alice', 30, TRUE);
 
 [DEBUG] Executing SELECT command: SELECT id FROM marks WHERE name == 'Alice';
 [DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/asduvsrxsr/marks.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/hlrskzlidt/marks.tab
 [DEBUG] Retrieved table header: id	name	mark	pass
 [DEBUG] Processed header columns: [id, name, mark, pass]
 [DEBUG] Selected columns from query: [id]
@@ -195,20 +195,20 @@ id
 
 ]]></system-out>
   </testcase>
-  <testcase name="testBasicCreateAndQuery" classname="edu.uob.mytest" time="0.023">
-    <system-out><![CDATA[hxbkafsofl
+  <testcase name="testBasicCreateAndQuery" classname="edu.uob.mytest" time="0.05">
+    <system-out><![CDATA[uipidylvrq
 ========================
-CREATE DATABASE hxbkafsofl;
-[OK] Switched to database: hxbkafsofl
+CREATE DATABASE uipidylvrq;
+[OK] Switched to database: uipidylvrq
 ========================
 
-hxbkafsofl
+uipidylvrq
 ========================
-USE hxbkafsofl;
+USE uipidylvrq;
 [OK]
 ========================
 
-/Users/apple01/cw-db加测试版/cw-db-over/databases/hxbkafsofl/marks.tab123456
+/Users/apple01/cw-db加测试版/cw-db-over/databases/uipidylvrq/marks.tab123456
 ========================
 CREATE TABLE marks (name, mark, pass);
 [OK] Table created
@@ -226,7 +226,7 @@ INSERT INTO marks VALUES ('Bob', 25, FALSE);
 
 [DEBUG] Executing SELECT command: SELECT * FROM marks;
 [DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/hxbkafsofl/marks.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/uipidylvrq/marks.tab
 [DEBUG] Retrieved table header: id	name	mark	pass
 [DEBUG] Processed header columns: [id, name, mark, pass]
 [DEBUG] Selected columns from query: [*]
@@ -241,20 +241,20 @@ id	name	mark	pass
 
 ]]></system-out>
   </testcase>
-  <testcase name="testTablePersistsAfterRestart" classname="edu.uob.mytest" time="0.03">
-    <system-out><![CDATA[szliughzhd
+  <testcase name="testTablePersistsAfterRestart" classname="edu.uob.mytest" time="0.018">
+    <system-out><![CDATA[jrxhxkgzhl
 ========================
-CREATE DATABASE szliughzhd;
-[OK] Switched to database: szliughzhd
+CREATE DATABASE jrxhxkgzhl;
+[OK] Switched to database: jrxhxkgzhl
 ========================
 
-szliughzhd
+jrxhxkgzhl
 ========================
-USE szliughzhd;
+USE jrxhxkgzhl;
 [OK]
 ========================
 
-/Users/apple01/cw-db加测试版/cw-db-over/databases/szliughzhd/marks.tab123456
+/Users/apple01/cw-db加测试版/cw-db-over/databases/jrxhxkgzhl/marks.tab123456
 ========================
 CREATE TABLE marks (name, mark, pass);
 [OK] Table created
@@ -265,15 +265,15 @@ INSERT INTO marks VALUES ('Alice', 30, TRUE);
 [OK] Insert successful
 ========================
 
-szliughzhd
+jrxhxkgzhl
 ========================
-USE szliughzhd;
+USE jrxhxkgzhl;
 [OK]
 ========================
 
 [DEBUG] Executing SELECT command: SELECT * FROM marks;
 [DEBUG] Extracted table name: 'marks'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/szliughzhd/marks.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/jrxhxkgzhl/marks.tab
 [DEBUG] Retrieved table header: id	name	mark	pass
 [DEBUG] Processed header columns: [id, name, mark, pass]
 [DEBUG] Selected columns from query: [*]
@@ -287,22 +287,22 @@ id	name	mark	pass
 
 ]]></system-out>
   </testcase>
-  <testcase name="testForErrorTag" classname="edu.uob.mytest" time="0.017">
-    <system-out><![CDATA[taizmncuor
+  <testcase name="testForErrorTag" classname="edu.uob.mytest" time="0.011">
+    <system-out><![CDATA[rbghdwihen
 ========================
-CREATE DATABASE taizmncuor;
-[OK] Switched to database: taizmncuor
+CREATE DATABASE rbghdwihen;
+[OK] Switched to database: rbghdwihen
 ========================
 
-taizmncuor
+rbghdwihen
 ========================
-USE taizmncuor;
+USE rbghdwihen;
 [OK]
 ========================
 
 [DEBUG] Executing SELECT command: SELECT * FROM nonexisttable;
 [DEBUG] Extracted table name: 'nonexisttable'
-[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/taizmncuor/nonexisttable.tab
+[DEBUG] Looking for table file at: /Users/apple01/cw-db加测试版/cw-db-over/databases/rbghdwihen/nonexisttable.tab
 [DEBUG] Table file does not exist.
 ========================
 SELECT * FROM nonexisttable;

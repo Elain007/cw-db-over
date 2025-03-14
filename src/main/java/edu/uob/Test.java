@@ -11,9 +11,9 @@ public class Test {
         QueryExecuter qe = new QueryExecuter();
         String result;
         result = qe.execute("USE amdxeenpll;");
-        System.out.println(result);
+        //System.out.println(result);
         result = qe.execute("JOIN coursework AND marks ON submission AND id;");
-        System.out.println(result);
+        //System.out.println(result);
     }
 
 }

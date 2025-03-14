@@ -30,10 +30,10 @@ public class CreateTableCommand {
         List<String> columns = new ArrayList<>();
         for (String col : rawColumns) {
             String trimmed = col.trim().replaceAll(";", "").toLowerCase();
-            if (!trimmed.matches("^[a-zA-Z][a-zA-Z0-9]*$") &&
-                    !trimmed.isEmpty()) {
+            if (!trimmed.matches("^[a-zA-Z0-9]+$") && !trimmed.isEmpty()) {
                 return "[ERROR] Invalid column name: " + trimmed;
             }
+
 
             if (columns.contains(trimmed)) {
                 return "[ERROR] Duplicate column name: " + trimmed;

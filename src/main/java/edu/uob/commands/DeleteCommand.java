@@ -17,7 +17,7 @@ public class DeleteCommand {
 
     public String execute(String[] tokens) {
         if (tokens.length < 5) {
-            System.out.println("[DEBUG] DELETE syntax invalid: tokens length " + tokens.length);
+            //System.out.println("[DEBUG] DELETE syntax invalid: tokens length " + tokens.length);
             return "[ERROR] Invalid DELETE syntax";
         }
 
@@ -36,7 +36,7 @@ public class DeleteCommand {
 
         // Check whether the WHERE keyword exists.
         if (tokens.length <= whereStartIndex || !tokens[whereStartIndex].equalsIgnoreCase("WHERE")) {
-            System.out.println("[DEBUG] DELETE command missing WHERE clause");
+            //System.out.println("[DEBUG] DELETE command missing WHERE clause");
             return "[ERROR] DELETE command must contain a WHERE clause";
         }
 
@@ -44,7 +44,7 @@ public class DeleteCommand {
         File databasePath = database.getCurrentDatabasePath();
         File tableFile = new File(databasePath, tableName + ".tab");
         if (!tableFile.exists()) {
-            System.out.println("[DEBUG] Table file for '" + tableName + "' does not exist at " + tableFile.getAbsolutePath());
+            //System.out.println("[DEBUG] Table file for '" + tableName + "' does not exist at " + tableFile.getAbsolutePath());
             return "[ERROR] Table does not exist";
         }
 
@@ -53,11 +53,11 @@ public class DeleteCommand {
         try {
             lines = Files.readAllLines(tableFile.toPath());
         } catch (IOException e) {
-            System.out.println("[DEBUG] IOException reading table file: " + e.getMessage());
+            //System.out.println("[DEBUG] IOException reading table file: " + e.getMessage());
             return "[ERROR] Failed to read table";
         }
         if (lines.isEmpty()) {
-            System.out.println("[DEBUG] Table file is empty");
+            //System.out.println("[DEBUG] Table file is empty");
             return "[ERROR] Table is empty";
         }
 
@@ -71,27 +71,27 @@ public class DeleteCommand {
 
         // Analytic WHERE condition
         if (tokens.length < whereStartIndex + 4) {
-            System.out.println("[DEBUG] Invalid WHERE syntax in DELETE: tokens length " + tokens.length + ", expected at least " + (whereStartIndex + 4));
+            //System.out.println("[DEBUG] Invalid WHERE syntax in DELETE: tokens length " + tokens.length + ", expected at least " + (whereStartIndex + 4));
             return "[ERROR] Invalid WHERE syntax";
         }
         String conditionColumn = tokens[whereStartIndex + 1];
         String whereOperator = tokens[whereStartIndex + 2];
         String conditionValue = tokens[whereStartIndex + 3];
-        System.out.println("[DEBUG] Parsed DELETE WHERE condition: column='" + conditionColumn +
-                "', operator='" + whereOperator + "', raw value='" + conditionValue + "'");
+        //System.out.println("[DEBUG] Parsed DELETE WHERE condition: column='" + conditionColumn +
+                //"', operator='" + whereOperator + "', raw value='" + conditionValue + "'");
 
         if ((conditionValue.startsWith("'") && conditionValue.endsWith("'")) ||
                 (conditionValue.startsWith("\"") && conditionValue.endsWith("\""))) {
             conditionValue = conditionValue.substring(1, conditionValue.length() - 1);
-            System.out.println("[DEBUG] Cleaned DELETE WHERE condition value: '" + conditionValue + "'");
+            //System.out.println("[DEBUG] Cleaned DELETE WHERE condition value: '" + conditionValue + "'");
         }
 
         // Clear all characters except numbers and letters in conditionValue.
         conditionValue = conditionValue.replaceAll("[^a-zA-Z0-9]", "");
-        System.out.println("[DEBUG] Cleaned DELETE WHERE condition value: '" + conditionValue + "'");
+        //System.out.println("[DEBUG] Cleaned DELETE WHERE condition value: '" + conditionValue + "'");
 
         if (!headerList.contains(conditionColumn)) {
-            System.out.println("[DEBUG] DELETE WHERE column '" + conditionColumn + "' not found in header: " + headerList);
+            //System.out.println("[DEBUG] DELETE WHERE column '" + conditionColumn + "' not found in header: " + headerList);
             return "[ERROR] Column '" + conditionColumn + "' does not exist";
         }
 
@@ -105,7 +105,7 @@ public class DeleteCommand {
             int condIndex = headerList.indexOf(conditionColumn);
             if (condIndex < rowValues.length) {
                 String actualValue = rowValues[condIndex].trim();
-                System.out.println("[DEBUG] Row " + i + " actual value for DELETE, column '" + conditionColumn + "': '" + actualValue + "'");
+                //System.out.println("[DEBUG] Row " + i + " actual value for DELETE, column '" + conditionColumn + "': '" + actualValue + "'");
                 switch (whereOperator) {
                     case "==":
                         if (!actualValue.equalsIgnoreCase(conditionValue))
@@ -132,7 +132,7 @@ public class DeleteCommand {
                         }
                         break;
                     default:
-                        System.out.println("[DEBUG] DELETE unsupported operator: " + whereOperator);
+                        //System.out.println("[DEBUG] DELETE unsupported operator: " + whereOperator);
                         return "[ERROR] Unsupported operator in WHERE clause";
                 }
             } else {
@@ -142,16 +142,16 @@ public class DeleteCommand {
             if (!rowMatches) {
                 newLines.add(rowLine);
             }else {
-                System.out.println("[DEBUG] Row " + i + " matched DELETE condition and will be removed");
+                //System.out.println("[DEBUG] Row " + i + " matched DELETE condition and will be removed");
             }
         }
 
         try {
             Files.write(tableFile.toPath(), newLines);
-            System.out.println("[DEBUG] Successfully wrote updated data to table file: " + tableFile.getAbsolutePath());
+            //System.out.println("[DEBUG] Successfully wrote updated data to table file: " + tableFile.getAbsolutePath());
             return "[OK] Delete successful";
         } catch (IOException e) {
-            System.out.println("[DEBUG] IOException writing table file: " + e.getMessage());
+            //System.out.println("[DEBUG] IOException writing table file: " + e.getMessage());
             return "[ERROR] Failed to write table";
         }
     }

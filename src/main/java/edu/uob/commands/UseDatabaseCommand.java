@@ -14,8 +14,7 @@ public class UseDatabaseCommand {
         if (tokens.length < 2) {
             return "[ERROR] Invalid USE syntax";
         }
-        System.out.println("123");
-        System.out.println(tokens[1]);
+        //System.out.println(tokens[1]);
         String dbName = tokens[1].replaceAll(";", "").toLowerCase().trim();
         String result = database.useDatabase(dbName);
 

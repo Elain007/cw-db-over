@@ -16,41 +16,41 @@ public class SelectCommand {
     }
 
     public String execute(String command, File databasePath) {
-        System.out.println("[DEBUG] Executing SELECT command: " + command);
+        //System.out.println("[DEBUG] Executing SELECT command: " + command);
         // Parse table name
         String tableName = QueryParser.extractTableName(command);
         if (tableName == null) {
-            System.out.println("[DEBUG] Invalid table name in SELECT command.");
+            //System.out.println("[DEBUG] Invalid table name in SELECT command.");
             return "[ERROR] Invalid table name";
         }
-        System.out.println("[DEBUG] Extracted table name: '" + tableName + "'");
+        //System.out.println("[DEBUG] Extracted table name: '" + tableName + "'");
         File tableFile = new File(databasePath, tableName + ".tab");
-        System.out.println("[DEBUG] Looking for table file at: " + tableFile.getAbsolutePath());
+        //System.out.println("[DEBUG] Looking for table file at: " + tableFile.getAbsolutePath());
         if (!tableFile.exists()) {
-            System.out.println("[DEBUG] Table file does not exist.");
+            //System.out.println("[DEBUG] Table file does not exist.");
             return "[ERROR] Table does not exist";
         }
         try {
             List<String> lines = Files.readAllLines(tableFile.toPath());
             if (lines.isEmpty()) {
-                System.out.println("[DEBUG] Table file is empty.");
+                //System.out.println("[DEBUG] Table file is empty.");
                 return "[ERROR] Table is empty";
             }
             // Get and process header
             String headerLine = lines.get(0);
-            System.out.println("[DEBUG] Retrieved table header: " + headerLine);
+            //System.out.println("[DEBUG] Retrieved table header: " + headerLine);
             String[] headerColumns = headerLine.split("\t");
             List<String> headerList = new ArrayList<>();
             for (String header : headerColumns) {
                 headerList.add(header.trim());
             }
-            System.out.println("[DEBUG] Processed header columns: " + headerList);
+            //System.out.println("[DEBUG] Processed header columns: " + headerList);
 
             // Parse the column name part in the SELECT statement
             List<String> selectedColumns = QueryParser.extractSelectColumns(command);
-            System.out.println("[DEBUG] Selected columns from query: " + selectedColumns);
+            //System.out.println("[DEBUG] Selected columns from query: " + selectedColumns);
             if (selectedColumns.isEmpty()) {
-                System.out.println("[DEBUG] No columns specified in SELECT command.");
+                //System.out.println("[DEBUG] No columns specified in SELECT command.");
                 return "[ERROR] Invalid SELECT syntax";
             }
 
@@ -64,13 +64,13 @@ public class SelectCommand {
                 for (String col : selectedColumns) {
                     int index = headerList.indexOf(col);
                     if (index == -1) {
-                        System.out.println("[DEBUG] Column '" + col + "' not found in header.");
+                        //System.out.println("[DEBUG] Column '" + col + "' not found in header.");
                         return "[ERROR] Column '" + col + "' does not exist";
                     }
                     selectedIndices.add(index);
                 }
             }
-            System.out.println("[DEBUG] Selected column indices: " + selectedIndices);
+            //System.out.println("[DEBUG] Selected column indices: " + selectedIndices);
 
             // Parse the WHERE clause
             int wherePos = command.toUpperCase().indexOf("WHERE");
@@ -86,7 +86,7 @@ public class SelectCommand {
                 boolean containsAnd = whereClause.toUpperCase().contains("AND");
                 boolean containsOr = whereClause.toUpperCase().contains("OR");
                 if (containsAnd && containsOr) {
-                    System.out.println("[DEBUG] Mixed AND/OR conditions are not supported.");
+                    //System.out.println("[DEBUG] Mixed AND/OR conditions are not supported.");
                     return "[ERROR] Mixed AND/OR conditions are not supported";
                 } else if (containsAnd) {
                     logicOperator = "AND";
@@ -149,7 +149,7 @@ public class SelectCommand {
                     }
                     String[] parts = condStr.split("\\s+");
                     if (parts.length != 3) {
-                        System.out.println("[DEBUG] Invalid WHERE clause detected: '" + condStr + "'");
+                        //System.out.println("[DEBUG] Invalid WHERE clause detected: '" + condStr + "'");
                         return "[ERROR] Invalid WHERE clause";
                     }
                     String col = parts[0].trim();
@@ -158,12 +158,12 @@ public class SelectCommand {
                     // Remove quotation marks and non-alphanumeric characters
                     val = val.replaceAll("^[\"']|[\"']$", "");
                     val = val.replaceAll("[^a-zA-Z0-9]", "");
-                    System.out.println("[DEBUG] Parsed condition: '" + col + " " + op + " " + val + "'");
+                    //System.out.println("[DEBUG] Parsed condition: '" + col + " " + op + " " + val + "'");
                     conditions.add(new String[]{col, op, val});
                 }
                 for (String[] cond : conditions) {
                     if (!headerList.contains(cond[0])) {
-                        System.out.println("[DEBUG] WHERE column '" + cond[0] + "' not found in header.");
+                        //System.out.println("[DEBUG] WHERE column '" + cond[0] + "' not found in header.");
                         return "[ERROR] Column " + cond[0] + " does not exist";
                     }
                 }
@@ -226,7 +226,7 @@ public class SelectCommand {
             String finalResult = String.join(System.lineSeparator(), resultRows);
             return "[OK]" + System.lineSeparator() + finalResult;
         } catch (IOException e) {
-            System.out.println("[DEBUG] Exception reading table file: " + e.getMessage());
+            //System.out.println("[DEBUG] Exception reading table file: " + e.getMessage());
             return "[ERROR] Failed to read table";
         }
     }
@@ -243,7 +243,7 @@ public class SelectCommand {
             return false;
         }
         String actualValue = rowValues[condIndex].trim();
-        System.out.println("[DEBUG] Row " + rowIndex + " condition (" + col + " " + op + " " + val + "): '" + actualValue + "'");
+        //System.out.println("[DEBUG] Row " + rowIndex + " condition (" + col + " " + op + " " + val + "): '" + actualValue + "'");
         boolean condResult = false;
         switch (op) {
             case "==":
@@ -270,7 +270,7 @@ public class SelectCommand {
                 condResult = actualValue.toLowerCase().contains(val.toLowerCase());
                 break;
             default:
-                System.out.println("[DEBUG] Unsupported operator in WHERE clause: " + op);
+                //System.out.println("[DEBUG] Unsupported operator in WHERE clause: " + op);
                 condResult = false;
         }
         return condResult;

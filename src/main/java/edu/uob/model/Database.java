@@ -30,7 +30,7 @@ public class Database {
     }
 
     public String useDatabase(String dbName) {
-        System.out.println(dbName);
+        //System.out.println(dbName);
         File databaseDir = new File(rootPath, dbName.toLowerCase().trim());
         if (!databaseDir.exists() || !databaseDir.isDirectory()) {
             return "[ERROR] Database does not exist";
@@ -54,7 +54,6 @@ public class Database {
         // Clean tableName
         String cleanedTableName = tableName.replaceAll("[^a-zA-Z0-9]", "").toLowerCase().trim();
         File tableFile = new File(this.currentDatabasePath, cleanedTableName + ".tab");
-        System.out.println(tableFile.toString() + "123456");
         if (tableFile.exists()) {
             return "[ERROR] Table already exists";
         }
@@ -110,7 +109,7 @@ public class Database {
         }
         // Read the original header
         String headerLine = lines.get(0);
-        System.out.println("[DEBUG] Original table header: " + headerLine);
+        //System.out.println("[DEBUG] Original table header: " + headerLine);
 
         // Split header columns and trim each column name.
         String[] columns = headerLine.split("\t");
@@ -118,19 +117,19 @@ public class Database {
         for (int i = 0; i < columns.length; i++) {
             String trimmed = columns[i].trim();
             trimmedColumns.add(trimmed);
-            System.out.println("[DEBUG] Processed Header Column " + i + ": '" + trimmed + "'");
+            //System.out.println("[DEBUG] Processed Header Column " + i + ": '" + trimmed + "'");
         }
-        System.out.println("[DEBUG] Full processed header: " + trimmedColumns);
+        //System.out.println("[DEBUG] Full processed header: " + trimmedColumns);
 
         // Trim the incoming columnName when comparing.
         String targetColumn = columnName.trim();
-        System.out.println("[DEBUG] Column to drop (target): '" + targetColumn + "'");
+        //System.out.println("[DEBUG] Column to drop (target): '" + targetColumn + "'");
 
         int columnIndex = -1;
         for (int i = 0; i < trimmedColumns.size(); i++) {
             if (trimmedColumns.get(i).equalsIgnoreCase(targetColumn)) {
                 columnIndex = i;
-                System.out.println("[DEBUG] Found column '" + targetColumn + "' at index: " + i);
+                //System.out.println("[DEBUG] Found column '" + targetColumn + "' at index: " + i);
                 break;
             }
         }
@@ -151,7 +150,7 @@ public class Database {
             }
             newHeader.append(trimmedColumns.get(i));
         }
-        System.out.println("[DEBUG] New table header after dropping column: " + newHeader.toString());
+        //System.out.println("[DEBUG] New table header after dropping column: " + newHeader.toString());
 
         /**
          * Construct new content: the first line is a new header, 
@@ -170,7 +169,7 @@ public class Database {
                 }
                 newLine.append(values[i].trim());
             }
-            System.out.println("[DEBUG] New row " + j + ": " + newLine.toString());
+            //System.out.println("[DEBUG] New row " + j + ": " + newLine.toString());
             newLines.add(newLine.toString());
         }
 
